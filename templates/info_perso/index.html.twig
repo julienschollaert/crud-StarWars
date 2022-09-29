@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}InfoPerso index{% endblock %}
+
+{% block body %}
+
+    {% include 'layout/header.html.twig' %}
+    <h3>Liste des personnages</h3>
+<div class="table-wrapper">
+    <table class="fl-table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Faction</th>
+                <th>Role</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for info_perso in info_persos %}
+            <tr>
+                <td>{{ info_perso.id }}</td>
+                <td>{{ info_perso.name }}</td>
+                <td>{{ info_perso.faction }}</td>
+                <td>{{ info_perso.role }}</td>
+                <td>
+                    <a href="{{ path('app_info_perso_show', {'id': info_perso.id}) }}">show</a>
+                    <a href="{{ path('app_info_perso_edit', {'id': info_perso.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+    <a href="{{ path('app_info_perso_new') }}">Create new</a>
+{% endblock %}

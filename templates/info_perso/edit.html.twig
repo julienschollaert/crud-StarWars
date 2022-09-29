@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit InfoPerso{% endblock %}
+
+
+{% block body %}
+    {% include 'layout/header.html.twig' %}
+    <h1>Edit InfoPerso</h1>
+
+    {{ include('info_perso/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_info_perso_index') }}">back to list</a>
+
+    {{ include('info_perso/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Planet{% endblock %}
+
+{% block body %}
+    {% include 'layout/header.html.twig' %}
+    <h1>Edit Planet</h1>
+
+    {{ include('planet/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_planet_index') }}">back to list</a>
+
+    {{ include('planet/_delete_form.html.twig') }}
+{% endblock %}

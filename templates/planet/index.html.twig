@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Planet index{% endblock %}
+
+{% block body %}
+    {% include 'layout/header.html.twig' %}
+    <h3>Liste des planètes</h3>
+<div class="table-wrapper">
+    <table class="fl-table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Taille</th>
+                <th>Region</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for planet in planets %}
+            <tr>
+                <td>{{ planet.id }}</td>
+                <td>{{ planet.name }}</td>
+                <td>{{ planet.taille }}</td>
+                <td>{{ planet.region }}</td>
+                <td>
+                    <a href="{{ path('app_planet_show', {'id': planet.id}) }}">show</a>
+                    <a href="{{ path('app_planet_edit', {'id': planet.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+    <a href="{{ path('app_planet_new') }}">Create new</a>
+{% endblock %}

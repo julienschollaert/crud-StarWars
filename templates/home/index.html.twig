@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+    {% include 'layout/header.html.twig' %}
+
+<div class="example-wrapper">
+
+    <a href="{{path('app_julien_crud')}}">CRUD</a>
+    <a href="{{path('app_info_perso_index')}}">CRUD Auto</a>
+</div>
+{% endblock %}
