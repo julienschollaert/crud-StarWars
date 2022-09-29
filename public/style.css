@@ -6,7 +6,8 @@
 body{
     font-family: Helvetica;
     -webkit-font-smoothing: antialiased;
-    background: gainsboro;
+
+    background-image: url("https://www.cevmarmi.com/images/catalogo/galaxy_black.jpg");
 }
 h2{
     text-align: center;
@@ -17,6 +18,14 @@ h2{
     padding: 30px 0;
 }
 
+p{
+    color:white;
+}
+
+h3
+{
+    color:white;
+}
 /* Table Styles */
 
 .table-wrapper{
